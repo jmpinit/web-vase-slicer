@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        #viewport {
+            width: 800px;
+            height: 600px;
+        }
+    </style>
+    <title>Vase Slicer</title>
+</head>
+<body>
+<div class="container">
+    <h1>Settings</h1>
+    <table>
+        <tr>
+            <td><label for="input-feedrate">Feed rate:</label></td>
+            <td><input id="input-feedrate" type="text" value="600" /></td>
+        </tr>
+        <tr>
+            <td><label for="input-layer-height">Layer height:</label></td>
+            <td><input id="input-layer-height" type="text" value="10" /></td>
+        </tr>
+        <tr>
+            <td><label for="input-points-around-perimeter">Points around perimeter:</label></td>
+            <td><input id="input-points-around-perimeter" type="text" value="64" /></td>
+        </tr>
+    </table>
+
+    <h1>3D Model</h1>
+    <label class="clickable" for="input-model">3D Model</label>
+    <input class="clickable" id="input-model" type="file" accept=".stl" />
+    <div id="model-section">
+        <canvas width="512" height="512" id="viewport"></canvas>
+    </div>
+
+    <h1>GCode</h1>
+    <button id="btn-copy-code">Copy Code</button>
+    <button id="btn-dl-code">Download Code</button>
+    <div>
+        <code class="language-css" id="gcode">
+            <!-- Filled by JS -->
+        </code>
+    </div>
+</div>
+
+<script src="js/bundle.js"></script>
+</body>
+</html>
